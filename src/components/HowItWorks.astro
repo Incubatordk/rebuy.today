@@ -1,19 +1,26 @@
 ---
+const base = import.meta.env.BASE_URL;
 const steps = [
   {
     number: '01',
     title: 'Find eller opret',
     description: 'Gennemse varer i dit nærområde — eller tag et par billeder og opret en annonce på under et minut.',
+    image: `${base}step1.jpg`,
+    alt: 'Forælder fotograferer en barnevogn for at oprette en annonce',
   },
   {
     number: '02',
     title: 'Skriv og aftal',
     description: 'Send en besked direkte i appen. Aftal pris, mødested og tidspunkt nemt og sikkert.',
+    image: `${base}step2.jpg`,
+    alt: 'Forælder skriver en besked i appen for at aftale handel',
   },
   {
     number: '03',
     title: 'Mød og byt',
     description: 'Mød hinanden lokalt og gør handlen. Ingen forsendelse, ingen gebyrer — bare en nem udveksling.',
+    image: `${base}step3.jpg`,
+    alt: 'To forældre mødes og udveksler en børnecykel',
   },
 ];
 ---
@@ -32,6 +39,9 @@ const steps = [
           </div>
           <h3 class="step-title">{step.title}</h3>
           <p class="step-description">{step.description}</p>
+          <div class="step-image-wrap">
+            <img class="step-image" src={step.image} alt={step.alt} loading="lazy" width="400" height="267" />
+          </div>
         </div>
       ))}
     </div>
@@ -81,6 +91,8 @@ const steps = [
 
   .step {
     position: relative;
+    display: flex;
+    flex-direction: column;
   }
 
   .step-top {
@@ -124,6 +136,25 @@ const steps = [
     color: var(--color-text-secondary);
     line-height: var(--line-height-relaxed);
     max-width: 320px;
+  }
+
+  .step-image-wrap {
+    margin-top: auto;
+    padding-top: var(--space-6);
+  }
+
+  .step-image-wrap img {
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-md);
+  }
+
+  .step-image {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    aspect-ratio: 1 / 1;
   }
 
   @media (max-width: 768px) {
