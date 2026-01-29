@@ -1,0 +1,88 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import '../styles/global.css';
+---
+<BaseLayout title="Vilkår og betingelser — Rebuy" description="Vilkår og betingelser for brug af Rebuy-appen.">
+  <Header />
+  <main class="legal-page">
+    <div class="container">
+      <h1>Vilkår og betingelser</h1>
+      <p class="legal-updated">Sidst opdateret: Januar 2026</p>
+
+      <h2>1. Acceptering af vilkår</h2>
+      <p>Ved at bruge Rebuy-appen accepterer du disse vilkår og betingelser. Hvis du ikke accepterer vilkårene, bedes du undlade at bruge appen.</p>
+
+      <h2>2. Tjenestebeskrivelse</h2>
+      <p>Rebuy er en markedsplads, der forbinder købere og sælgere af børneartikler lokalt i Danmark. Vi faciliterer kontakten mellem brugere, men er ikke part i selve handlen.</p>
+
+      <h2>3. Brugerkonto</h2>
+      <p>For at bruge Rebuy skal du oprette en konto. Du er ansvarlig for at holde dine loginoplysninger fortrolige og for al aktivitet på din konto.</p>
+
+      <h2>4. Regler for annoncer</h2>
+      <p>Du må kun annoncere børnerelaterede varer. Annoncer skal være ærlige og nøjagtige. Det er ikke tilladt at annoncere ulovlige eller farlige produkter.</p>
+
+      <h2>5. Transaktioner</h2>
+      <p>Alle transaktioner sker direkte mellem køber og sælger. Rebuy er ikke ansvarlig for kvaliteten af varer, betaling eller leveringsforhold.</p>
+
+      <h2>6. Adfærd</h2>
+      <p>Brugere forventes at opføre sig respektfuldt. Chikane, svindel eller misbrug af platformen kan medføre, at din konto bliver lukket.</p>
+
+      <h2>7. Ansvarsfraskrivelse</h2>
+      <p>Rebuy leveres "som den er". Vi garanterer ikke tilgængelighed, nøjagtighed eller resultater af brug af tjenesten.</p>
+
+      <h2>8. Ændringer</h2>
+      <p>Vi forbeholder os retten til at ændre disse vilkår. Væsentlige ændringer vil blive meddelt via appen.</p>
+
+      <h2>9. Kontakt</h2>
+      <p>Spørgsmål kan rettes til <strong>support@rebuy.today</strong>.</p>
+    </div>
+  </main>
+  <Footer />
+</BaseLayout>
+
+<style>
+  .legal-page {
+    padding: var(--space-12) 0 var(--space-16);
+  }
+
+  .legal-page h1 {
+    font-size: clamp(1.75rem, 4vw, 2.5rem);
+    font-weight: var(--font-weight-semibold);
+    margin-bottom: var(--space-2);
+  }
+
+  .legal-updated {
+    color: var(--color-text-muted);
+    font-size: var(--font-size-sm);
+    margin-bottom: var(--space-10);
+  }
+
+  .legal-page h2 {
+    font-size: var(--font-size-2xl);
+    font-weight: var(--font-weight-semibold);
+    margin-top: var(--space-8);
+    margin-bottom: var(--space-3);
+  }
+
+  .legal-page p {
+    color: var(--color-text-secondary);
+    line-height: var(--line-height-relaxed);
+    margin-bottom: var(--space-4);
+    max-width: 680px;
+  }
+
+  .legal-page ul {
+    list-style: disc;
+    padding-left: var(--space-6);
+    margin-bottom: var(--space-4);
+    max-width: 680px;
+  }
+
+  .legal-page li {
+    color: var(--color-text-secondary);
+    line-height: var(--line-height-relaxed);
+    margin-bottom: var(--space-2);
+  }
+</style>

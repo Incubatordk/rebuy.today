@@ -1,0 +1,141 @@
+---
+const steps = [
+  {
+    number: '01',
+    title: 'Find eller opret',
+    description: 'Gennemse varer i dit nærområde — eller tag et par billeder og opret en annonce på under et minut.',
+  },
+  {
+    number: '02',
+    title: 'Skriv og aftal',
+    description: 'Send en besked direkte i appen. Aftal pris, mødested og tidspunkt nemt og sikkert.',
+  },
+  {
+    number: '03',
+    title: 'Mød og byt',
+    description: 'Mød hinanden lokalt og gør handlen. Ingen forsendelse, ingen gebyrer — bare en nem udveksling.',
+  },
+];
+---
+<section class="how-it-works" id="saadan-virker-det">
+  <div class="container">
+    <div class="section-header" data-animate>
+      <span class="section-label">Sådan virker det</span>
+      <h2 class="section-title">Tre enkle trin<br /><span class="title-accent">— og du er i gang</span></h2>
+    </div>
+    <div class="steps" data-animate-stagger>
+      {steps.map((step, i) => (
+        <div class="step">
+          <div class="step-top">
+            <span class="step-number">{step.number}</span>
+            {i < steps.length - 1 && <div class="step-line" aria-hidden="true" />}
+          </div>
+          <h3 class="step-title">{step.title}</h3>
+          <p class="step-description">{step.description}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .how-it-works {
+    padding: var(--space-24) 0;
+    background: var(--color-bg-sage);
+  }
+
+  .section-header {
+    text-align: center;
+    margin-bottom: var(--space-16);
+  }
+
+  .section-label {
+    display: inline-block;
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-semibold);
+    color: var(--color-accent);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: var(--space-4);
+  }
+
+  .section-title {
+    font-size: clamp(1.75rem, 4vw, var(--font-size-4xl));
+    font-weight: var(--font-weight-bold);
+    color: var(--color-text-primary);
+    letter-spacing: -0.02em;
+    line-height: var(--line-height-snug);
+  }
+
+  .title-accent {
+    font-style: italic;
+    color: var(--color-text-secondary);
+    font-weight: var(--font-weight-medium);
+  }
+
+  .steps {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-8);
+  }
+
+  .step {
+    position: relative;
+  }
+
+  .step-top {
+    display: flex;
+    align-items: center;
+    margin-bottom: var(--space-6);
+  }
+
+  .step-number {
+    flex-shrink: 0;
+    width: 56px;
+    height: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--color-accent);
+    color: white;
+    border-radius: var(--radius-xl);
+    font-size: var(--font-size-xl);
+    font-weight: var(--font-weight-bold);
+    letter-spacing: -0.02em;
+  }
+
+  .step-line {
+    flex: 1;
+    height: 2px;
+    background: linear-gradient(to right, var(--color-accent), var(--color-accent-light));
+    margin-left: var(--space-4);
+  }
+
+  .step-title {
+    font-size: var(--font-size-2xl);
+    font-weight: var(--font-weight-semibold);
+    margin-bottom: var(--space-3);
+    color: var(--color-text-primary);
+    letter-spacing: -0.01em;
+  }
+
+  .step-description {
+    font-size: var(--font-size-base);
+    color: var(--color-text-secondary);
+    line-height: var(--line-height-relaxed);
+    max-width: 320px;
+  }
+
+  @media (max-width: 768px) {
+    .steps {
+      grid-template-columns: 1fr;
+      gap: var(--space-10);
+      max-width: 400px;
+      margin: 0 auto;
+    }
+
+    .step-line {
+      display: none;
+    }
+  }
+</style>

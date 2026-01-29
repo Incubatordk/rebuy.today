@@ -1,0 +1,97 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import '../styles/global.css';
+---
+<BaseLayout title="Privatlivspolitik — Rebuy" description="Privatlivspolitik for Rebuy-appen.">
+  <Header />
+  <main class="legal-page">
+    <div class="container">
+      <h1>Privatlivspolitik</h1>
+      <p class="legal-updated">Sidst opdateret: Januar 2026</p>
+
+      <h2>1. Indledning</h2>
+      <p>Rebuy ("vi", "os" eller "vores") respekterer dit privatliv og er forpligtet til at beskytte dine personlige oplysninger. Denne privatlivspolitik forklarer, hvordan vi indsamler, bruger og beskytter dine data, når du bruger Rebuy-appen.</p>
+
+      <h2>2. Hvilke oplysninger vi indsamler</h2>
+      <p>Vi indsamler følgende typer oplysninger:</p>
+      <ul>
+        <li><strong>Kontooplysninger:</strong> Navn, e-mailadresse og valgfrit profilbillede, når du opretter en konto.</li>
+        <li><strong>Lokationsdata:</strong> Din placering bruges til at vise varer i nærheden. Du kan til enhver tid justere din placering.</li>
+        <li><strong>Annoncedata:</strong> Billeder, beskrivelser og priser på varer du sætter til salg.</li>
+        <li><strong>Beskeder:</strong> Kommunikation mellem brugere i appen.</li>
+      </ul>
+
+      <h2>3. Hvordan vi bruger dine oplysninger</h2>
+      <p>Vi bruger dine oplysninger til at:</p>
+      <ul>
+        <li>Levere og forbedre vores tjenester</li>
+        <li>Vise relevante varer baseret på din placering</li>
+        <li>Muliggøre kommunikation mellem købere og sælgere</li>
+        <li>Sende dig notifikationer om beskeder og aktivitet</li>
+      </ul>
+
+      <h2>4. Deling af oplysninger</h2>
+      <p>Vi sælger ikke dine personlige oplysninger. Din profil og annoncer er synlige for andre brugere af appen. Vi kan dele data med tjenesteudbydere, der hjælper os med at drive appen (f.eks. hosting og notifikationer).</p>
+
+      <h2>5. Dine rettigheder</h2>
+      <p>I henhold til GDPR har du ret til at:</p>
+      <ul>
+        <li>Få adgang til dine personlige oplysninger</li>
+        <li>Rette unøjagtige oplysninger</li>
+        <li>Slette din konto og dine data</li>
+        <li>Trække dit samtykke tilbage</li>
+      </ul>
+
+      <h2>6. Kontakt</h2>
+      <p>Har du spørgsmål til denne privatlivspolitik, kan du kontakte os på <strong>privacy@rebuy.today</strong>.</p>
+    </div>
+  </main>
+  <Footer />
+</BaseLayout>
+
+<style>
+  .legal-page {
+    padding: var(--space-12) 0 var(--space-16);
+  }
+
+  .legal-page h1 {
+    font-size: clamp(1.75rem, 4vw, 2.5rem);
+    font-weight: var(--font-weight-semibold);
+    margin-bottom: var(--space-2);
+  }
+
+  .legal-updated {
+    color: var(--color-text-muted);
+    font-size: var(--font-size-sm);
+    margin-bottom: var(--space-10);
+  }
+
+  .legal-page h2 {
+    font-size: var(--font-size-2xl);
+    font-weight: var(--font-weight-semibold);
+    margin-top: var(--space-8);
+    margin-bottom: var(--space-3);
+  }
+
+  .legal-page p {
+    color: var(--color-text-secondary);
+    line-height: var(--line-height-relaxed);
+    margin-bottom: var(--space-4);
+    max-width: 680px;
+  }
+
+  .legal-page ul {
+    list-style: disc;
+    padding-left: var(--space-6);
+    margin-bottom: var(--space-4);
+    max-width: 680px;
+  }
+
+  .legal-page li {
+    color: var(--color-text-secondary);
+    line-height: var(--line-height-relaxed);
+    margin-bottom: var(--space-2);
+  }
+</style>

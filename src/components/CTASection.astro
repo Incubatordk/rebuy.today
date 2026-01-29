@@ -1,0 +1,131 @@
+---
+import AppStoreButtons from './AppStoreButtons.astro';
+---
+<section class="cta" id="download">
+  <div class="container">
+    <div class="cta-card" data-animate>
+      <div class="cta-content">
+        <h2 class="cta-title">Klar til at komme<br />i gang?</h2>
+        <p class="cta-subtitle">Download Rebuy gratis og bliv en del af fællesskabet af forældre der handler lokalt og bæredygtigt.</p>
+        <AppStoreButtons variant="light" />
+      </div>
+      <div class="cta-visual" aria-hidden="true">
+        <div class="cta-circle cta-circle-1"></div>
+        <div class="cta-circle cta-circle-2"></div>
+        <div class="cta-icon">
+          <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .cta {
+    padding: var(--space-24) 0;
+  }
+
+  .cta-card {
+    background: var(--color-accent);
+    border-radius: var(--radius-2xl);
+    padding: var(--space-16) var(--space-12);
+    display: flex;
+    align-items: center;
+    gap: var(--space-12);
+    position: relative;
+    overflow: hidden;
+    color: white;
+  }
+
+  .cta-content {
+    flex: 1;
+    position: relative;
+    z-index: 1;
+  }
+
+  .cta-title {
+    font-size: clamp(1.75rem, 4vw, var(--font-size-4xl));
+    font-weight: var(--font-weight-bold);
+    margin-bottom: var(--space-4);
+    letter-spacing: -0.02em;
+    line-height: var(--line-height-snug);
+  }
+
+  .cta-subtitle {
+    font-size: var(--font-size-lg);
+    opacity: 0.9;
+    margin-bottom: var(--space-8);
+    max-width: 440px;
+    line-height: var(--line-height-relaxed);
+  }
+
+  .cta-visual {
+    flex-shrink: 0;
+    position: relative;
+    width: 200px;
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .cta-circle {
+    position: absolute;
+    border-radius: 50%;
+    border: 1.5px solid rgba(255, 255, 255, 0.2);
+  }
+
+  .cta-circle-1 {
+    width: 160px;
+    height: 160px;
+    animation: breathe 4s ease-in-out infinite;
+  }
+
+  .cta-circle-2 {
+    width: 200px;
+    height: 200px;
+    animation: breathe 4s ease-in-out infinite 1s;
+  }
+
+  @keyframes breathe {
+    0%, 100% { transform: scale(1); opacity: 0.4; }
+    50% { transform: scale(1.05); opacity: 0.8; }
+  }
+
+  .cta-icon {
+    position: relative;
+    z-index: 1;
+    opacity: 0.9;
+  }
+
+  .cta :global(.store-btn) {
+    background: white;
+    color: var(--color-text-primary);
+  }
+
+  @media (max-width: 768px) {
+    .cta-card {
+      flex-direction: column;
+      text-align: center;
+      padding: var(--space-12) var(--space-8);
+    }
+
+    .cta-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .cta-subtitle {
+      max-width: 100%;
+    }
+
+    .cta-visual {
+      display: none;
+    }
+
+    .cta :global(.store-buttons) {
+      justify-content: center;
+    }
+  }
+</style>

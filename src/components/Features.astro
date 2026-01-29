@@ -1,0 +1,119 @@
+---
+import FeatureCard from './FeatureCard.astro';
+
+const features = [
+  {
+    title: 'Tæt på dig',
+    description: 'Find varer i dit nærområde. Filtrer efter afstand og mød sælger lokalt — uden besværlig forsendelse.',
+    icon: '<svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>',
+    color: 'var(--color-accent)',
+  },
+  {
+    title: 'Nem besked',
+    description: 'Chat direkte i appen. Aftal pris og mødested hurtigt og trygt med andre forældre.',
+    icon: '<svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>',
+    color: '#6B8CAE',
+  },
+  {
+    title: 'Alt til børn',
+    description: 'Tøj, legetøj, barnevogne, møbler, bøger og meget mere — alt samlet ét sted med smarte filtre.',
+    icon: '<svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>',
+    color: '#E5A84B',
+  },
+  {
+    title: 'Trygt fællesskab',
+    description: 'Se profiler og anmeldelser. Handler sker lokalt mellem rigtige forældre i dit område.',
+    icon: '<svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>',
+    color: 'var(--color-brand-pink)',
+  },
+  {
+    title: 'iPhone og Android',
+    description: 'Download appen gratis på App Store eller Google Play. Klar til brug med det samme.',
+    icon: '<svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>',
+    color: '#8B7EC8',
+  },
+  {
+    title: 'Bæredygtigt',
+    description: 'Giv børnenes ting et nyt liv. Godt for pengepungen, godt for planeten og godt for næste familie.',
+    icon: '<svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 22c1.25-1 3-2.5 5-2.5s3.75 1.5 5 2.5 3 2.5 5 2.5 3.75-1.5 5-2.5"/><path d="M12 2C6.5 2 2 6.5 2 12c0 1.8.5 3.5 1.3 5"/><path d="M22 12c0-1.8-.5-3.5-1.3-5"/><path d="M12 2v10"/><path d="M12 12l5-3"/><path d="M12 12l-5-3"/></svg>',
+    color: 'var(--color-accent)',
+  },
+];
+---
+<section class="features" id="funktioner">
+  <div class="container">
+    <div class="section-header" data-animate>
+      <span class="section-label">Funktioner</span>
+      <h2 class="section-title">Alt hvad du har brug for<br /><span class="title-accent">— samlet i én app</span></h2>
+      <p class="section-subtitle">Rebuy er designet til travle forældre. Nemt at bruge, trygt at handle og godt for miljøet.</p>
+    </div>
+    <div class="features-grid" data-animate-stagger>
+      {features.map((f) => (
+        <FeatureCard title={f.title} description={f.description} icon={f.icon} color={f.color} />
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .features {
+    padding: var(--space-24) 0;
+  }
+
+  .section-header {
+    text-align: center;
+    margin-bottom: var(--space-16);
+  }
+
+  .section-label {
+    display: inline-block;
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-semibold);
+    color: var(--color-accent);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: var(--space-4);
+  }
+
+  .section-title {
+    font-size: clamp(1.75rem, 4vw, var(--font-size-4xl));
+    font-weight: var(--font-weight-bold);
+    margin-bottom: var(--space-4);
+    color: var(--color-text-primary);
+    letter-spacing: -0.02em;
+    line-height: var(--line-height-snug);
+  }
+
+  .title-accent {
+    font-style: italic;
+    color: var(--color-text-secondary);
+    font-weight: var(--font-weight-medium);
+  }
+
+  .section-subtitle {
+    font-size: var(--font-size-lg);
+    color: var(--color-text-secondary);
+    max-width: 540px;
+    margin: 0 auto;
+    line-height: var(--line-height-relaxed);
+  }
+
+  .features-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-6);
+  }
+
+  @media (max-width: 900px) {
+    .features-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 540px) {
+    .features-grid {
+      grid-template-columns: 1fr;
+      gap: var(--space-4);
+    }
+  }
+</style>

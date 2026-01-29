@@ -1,0 +1,44 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Hero from '../components/Hero.astro';
+import Features from '../components/Features.astro';
+import HowItWorks from '../components/HowItWorks.astro';
+import Testimonials from '../components/Testimonials.astro';
+import CTASection from '../components/CTASection.astro';
+import Footer from '../components/Footer.astro';
+import '../styles/global.css';
+
+import logoSvg from '../assets/logos/logo-animated.svg?raw';
+---
+<BaseLayout title="Rebuy — Køb og sælg børneting lokalt">
+  <Header />
+  <main>
+    <Hero>
+      <Fragment slot="logo" set:html={logoSvg} />
+    </Hero>
+    <Features />
+    <HowItWorks />
+    <Testimonials />
+    <CTASection />
+  </main>
+  <Footer />
+</BaseLayout>
+
+<!-- Scroll animation observer -->
+<script>
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+        }
+      });
+    },
+    { threshold: 0.15, rootMargin: '0px 0px -40px 0px' }
+  );
+
+  document.querySelectorAll('[data-animate], [data-animate-stagger]').forEach((el) => {
+    observer.observe(el);
+  });
+</script>

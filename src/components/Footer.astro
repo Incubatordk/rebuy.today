@@ -1,0 +1,127 @@
+---
+const year = new Date().getFullYear();
+---
+<footer class="footer">
+  <div class="container footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="footer-logo">
+          <svg class="footer-logo-icon" width="28" height="28" viewBox="0 0 540 400" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path fill="var(--color-brand-pink)" d="M223.017 185.149h12.891V139.05c0-27.094-22.047-49.14-49.148-49.14-27.102 0-49.142 22.046-49.142 49.14v46.098h12.885l-17.724 93.1h107.592zm-36.257-81.77c19.673 0 35.676 16.009 35.676 35.672v45.77h-71.353v-45.77c0-19.667 16.003-35.672 35.677-35.672"/>
+            <path fill="var(--color-brand-pink)" d="M138.738 92.274c4.234 0 10.385-.694 15.62-3.958a18.27 18.27 0 0 0 7.042-7.964 41.186 41.186 0 0 0 24.854 8.343c22.901 0 41.53-18.632 41.53-41.525.003-22.9-18.625-41.532-41.526-41.532-22.901 0-41.53 18.631-41.53 41.532 0 2.622.27 5.183.744 7.67h-.061c-12.906 0-19.742 13.881-23.417 21.34-.625 1.263-1.134 2.335-1.57 3.049l-3.648 5.897 6.004 3.47c3.978 2.301 9.94 3.678 15.958 3.678"/>
+          </svg>
+          <span class="footer-logo-text">Rebuy</span>
+        </div>
+        <p class="footer-tagline">Markedspladsen for børnefamilier i Danmark.</p>
+      </div>
+
+      <nav class="footer-links" aria-label="Sidefod">
+        <div class="footer-link-group">
+          <span class="footer-link-heading">Juridisk</span>
+          <a href="/privacy">Privatlivspolitik</a>
+          <a href="/terms">Vilkår og betingelser</a>
+        </div>
+        <div class="footer-link-group">
+          <span class="footer-link-heading">Kontakt</span>
+          <a href="mailto:support@rebuy.today">support@rebuy.today</a>
+        </div>
+      </nav>
+    </div>
+
+    <div class="footer-bottom">
+      <p class="footer-copy">&copy; {year} Rebuy. Lavet med omtanke i Danmark.</p>
+    </div>
+  </div>
+</footer>
+
+<style>
+  .footer {
+    padding: var(--space-16) 0 var(--space-8);
+    border-top: 1px solid var(--color-border);
+  }
+
+  .footer-inner {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-12);
+  }
+
+  .footer-top {
+    display: flex;
+    justify-content: space-between;
+    gap: var(--space-12);
+  }
+
+  .footer-brand {
+    max-width: 280px;
+  }
+
+  .footer-logo {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    margin-bottom: var(--space-3);
+  }
+
+  .footer-logo-text {
+    font-size: var(--font-size-2xl);
+    font-weight: var(--font-weight-bold);
+    letter-spacing: -0.02em;
+  }
+
+  .footer-tagline {
+    font-size: var(--font-size-sm);
+    color: var(--color-text-muted);
+    line-height: var(--line-height-relaxed);
+  }
+
+  .footer-links {
+    display: flex;
+    gap: var(--space-16);
+  }
+
+  .footer-link-group {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+  }
+
+  .footer-link-heading {
+    font-size: var(--font-size-xs);
+    font-weight: var(--font-weight-semibold);
+    color: var(--color-text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+
+  .footer-link-group a {
+    font-size: var(--font-size-sm);
+    color: var(--color-text-secondary);
+    transition: color 0.2s ease;
+  }
+
+  .footer-link-group a:hover {
+    color: var(--color-text-primary);
+  }
+
+  .footer-bottom {
+    padding-top: var(--space-8);
+    border-top: 1px solid var(--color-border);
+  }
+
+  .footer-copy {
+    font-size: var(--font-size-xs);
+    color: var(--color-text-muted);
+  }
+
+  @media (max-width: 640px) {
+    .footer-top {
+      flex-direction: column;
+      gap: var(--space-8);
+    }
+
+    .footer-links {
+      gap: var(--space-10);
+    }
+  }
+</style>
