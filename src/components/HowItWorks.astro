@@ -1,25 +1,29 @@
 ---
-const base = import.meta.env.BASE_URL;
+import { Image } from 'astro:assets';
+import step1Img from '../assets/images/step1.jpg';
+import step2Img from '../assets/images/step2.jpg';
+import step3Img from '../assets/images/step3.jpg';
+
 const steps = [
   {
     number: '01',
     title: 'Find eller opret',
     description: 'Gennemse varer i dit nærområde — eller tag et par billeder og opret en annonce på under et minut.',
-    image: `${base}step1.jpg`,
+    image: step1Img,
     alt: 'Forælder fotograferer en barnevogn for at oprette en annonce',
   },
   {
     number: '02',
     title: 'Skriv og aftal',
     description: 'Send en besked direkte i appen. Aftal pris, mødested og tidspunkt nemt og sikkert.',
-    image: `${base}step2.jpg`,
+    image: step2Img,
     alt: 'Forælder skriver en besked i appen for at aftale handel',
   },
   {
     number: '03',
     title: 'Mød og byt',
     description: 'Mød hinanden lokalt og gør handlen. Ingen forsendelse, ingen gebyrer — bare en nem udveksling.',
-    image: `${base}step3.jpg`,
+    image: step3Img,
     alt: 'To forældre mødes og udveksler en børnecykel',
   },
 ];
@@ -40,7 +44,7 @@ const steps = [
           <h3 class="step-title">{step.title}</h3>
           <p class="step-description">{step.description}</p>
           <div class="step-image-wrap">
-            <img class="step-image" src={step.image} alt={step.alt} loading="lazy" width="400" height="267" />
+            <Image class="step-image" src={step.image} alt={step.alt} width={400} height={400} loading="lazy" />
           </div>
         </div>
       ))}
@@ -52,35 +56,6 @@ const steps = [
   .how-it-works {
     padding: var(--space-24) 0;
     background: var(--color-bg-sage);
-  }
-
-  .section-header {
-    text-align: center;
-    margin-bottom: var(--space-16);
-  }
-
-  .section-label {
-    display: inline-block;
-    font-size: var(--font-size-sm);
-    font-weight: var(--font-weight-semibold);
-    color: var(--color-accent);
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    margin-bottom: var(--space-4);
-  }
-
-  .section-title {
-    font-size: clamp(1.75rem, 4vw, var(--font-size-4xl));
-    font-weight: var(--font-weight-bold);
-    color: var(--color-text-primary);
-    letter-spacing: -0.02em;
-    line-height: var(--line-height-snug);
-  }
-
-  .title-accent {
-    font-style: italic;
-    color: var(--color-text-secondary);
-    font-weight: var(--font-weight-medium);
   }
 
   .steps {
